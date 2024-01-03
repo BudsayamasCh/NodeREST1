@@ -1,16 +1,3 @@
-// require("dotenv").config();
-
-// const express = require('express');
-// const app = express();
-// const port = process.env.PORT || 3000;
-
-// app.get("/", (req, res) => {res.send("Hello World! Hello,check"); });
-
-// app.listen(port,
-//     () =>{
-//         console.log(`Example app listening at http://localhost:${port}`);
-//     });
-// // app.listen(post, () => console.log(`Listen on port ${post} ...`));
 //Description: CRUD Book No DB
 //npm install express
 //Run this file with node CRUDBookNoDB.js
@@ -66,7 +53,7 @@ app.post("/books", (req, res) => {
 
 //route to update a book
 app.put("/books/:id", (req, res) => {
-  const book = books.find((b) => b.id === parseInt(req.params.id));
+  const book = books.find((b) => b.id === parseInt(req.param.id));
   if (!book) res.status(404).send("Book not found");
   book.title = req.body.title;
   book.author = req.body.author;
